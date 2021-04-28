@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 
 
     socket.on('disconnect', () => {
-        Content = {name : allUsers[socket.id], message:'joined the chat', type: 'received'}
+        Content = {name : allUsers[socket.id], message:'left the chat', type: 'received'}
         socket.broadcast.emit('receive', Content)
         delete allUsers[socket.id]
     })
